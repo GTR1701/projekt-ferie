@@ -1,0 +1,46 @@
+.image {
+  width: 18.48vw;
+  height: 18.48vw;
+  margin-top: 6.6vh;
+  margin-bottom: 6.6vh;
+  margin-left: 2.64vw;
+  margin-right: 2.64vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 56.1vw;
+  height: fit-content;
+  margin-bottom: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text {
+  margin: 21vh 15vh;
+  font-size: 1.1vw;
+  color: #323031;
+}
+
+.link {
+  width: 56.1vw;
+}
+
+.left {
+  background-color: teal;
+  height: max-content;
+  width: max-content;
+  text-align: justify;
+  transform: translate(5vw, -15vh);
+  border-radius: 3rem;
+}
+
+.right {
+  background-color: skyblue;
+  height: max-content;
+  width: max-content;
+  text-align: justify;
+  transform: translate(0, 15vh);
+  border-radius: 0rem 3rem 3rem 3rem;
+}

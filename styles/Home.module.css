@@ -1,0 +1,12 @@
+.banner {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.space {
+  height: 150vh;
+  width: 100%;
+}
