@@ -25,14 +25,10 @@ export default function Card({ direction, image, content, page }: cardProps) {
             transition: { duration: 0.5 },
           }}
           whileTap={{ scale: 0.9 }}
-          className={styles.card}
+          className={styles.card_left}
         >
-          <div className={styles.right}>
-            <p className={styles.text}>{content}</p>
-          </div>
-          <div className={styles.left}>
-            <img className={styles.image} src={image} alt="" />
-          </div>
+          <img className={styles.image} src={image} alt="" />
+          <p className={styles.text}>{content}</p>
         </motion.div>
       </Link>
     );
@@ -51,14 +47,10 @@ export default function Card({ direction, image, content, page }: cardProps) {
             transition: { duration: 0.5 },
           }}
           whileTap={{ scale: 0.9 }}
-          className={styles.card}
+          className={styles.card_right}
         >
-          <div className={styles.right}>
-            <p className={styles.text}>{content}</p>
-          </div>
-          <div className={styles.left}>
-            <img className={styles.image} src={image} alt="" />
-          </div>
+          <p className={styles.text}>{content}</p>
+          <img className={styles.image} src={image} alt="" />
         </motion.div>
       </Link>
     );

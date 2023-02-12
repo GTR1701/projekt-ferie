@@ -4,6 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Restauracje.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Section from "../components/Section";
 
 export default function Home() {
   return (
@@ -14,17 +15,48 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
-        className={styles.banner}
-        alt=""
-        width="100%"
-        height="100%"
-        src="/restauracja.jpg"
-      />
+      <img className="banner" alt="" src="/restauracja.jpg" />
       <Navbar sticky={false} />
+      <div className="space"></div>
+      <Section
+        direction={"right"}
+        image={
+          "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        }
+        name={"Restauracja Main"}
+        price={""}
+        size={
+          "Otwarta w godzinach 7-10 (śniadania), 10-16, 16-19 (obiado-kolacje), 19-22"
+        }
+        content={
+          "Główna restauracja z widokiem na pobliski szczyt. W restauracji Main serwowane są wykupione śniadania oraz obiado-kolacje w formie szwedzkiego bufetu. Poza godzinami posiłków, dostępna jest jako zwykła restauracja z kartą dań."
+        }
+      />
+      <Section
+        direction={"right"}
+        image={
+          "https://images.unsplash.com/photo-1571757392712-7c1052de7ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+        }
+        name={"Pizzeria Romana"}
+        price={""}
+        size={"Otwarta w godzinach 10-22"}
+        content={
+          "Pizzeria Romana to hotelowa pizzeria dostępna dla wszystkich, zarówno gości jak i osób z zewnątrz. Pizza przygotowywana jest ze świeżych składników i pieczona w piecu opalanym drewnem. Oprócz pizzy oferujemy także makarony, zapiekanki oraz inne włoskie dania."
+        }
+      />
+      <Section
+        direction={"right"}
+        image={
+          "https://images.unsplash.com/photo-1462539405390-d0bdb635c7d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=920&q=80"
+        }
+        name={"Lobby Bar"}
+        price={""}
+        size={"Otwarty w godzinach 10-23"}
+        content={
+          "Nasz Lobby Bar oferuje szeroki wybór alkoholi, drinków, jak i koktajli bezalkoholowych, serwowanych przez profesjonalnych barmanów"
+        }
+      />
       <Navbar sticky={true} />
-      <div className={styles.space}></div>
-      <Image alt="" width={1550} height={600} src="/banner.jpg" />
       <Footer />
     </>
   );

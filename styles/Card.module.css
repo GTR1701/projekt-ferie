@@ -1,46 +1,97 @@
-.image {
-  width: 18.48vw;
-  height: 18.48vw;
-  margin-top: 6.6vh;
-  margin-bottom: 6.6vh;
-  margin-left: 2.64vw;
-  margin-right: 2.64vw;
+.card_left {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  width: 100vw;
+  height: fit-content;
+  margin-bottom: 40vh;
+  padding: 4rem 0;
+  background-color: skyblue;
 }
 
-.card {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 56.1vw;
+.card_right {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  width: 100vw;
   height: fit-content;
-  margin-bottom: 50vh;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 40vh;
+  padding: 4rem 0;
+  background-color: skyblue;
+}
+
+.section_left {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  width: 100vw;
+  height: fit-content;
+  margin-bottom: 40vh;
+  padding: 4rem 0;
+  background-color: skyblue;
+}
+
+.section_right {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  width: 100vw;
+  height: fit-content;
+  margin-bottom: 40vh;
+  padding: 4rem 0;
+  background-color: skyblue;
+}
+
+.image {
+  max-width: 50vw;
+  min-width: 25vw;
+  max-height: 50vw;
+  min-height: 25vw;
 }
 
 .text {
-  margin: 21vh 15vh;
   font-size: 1.1vw;
   color: #323031;
+  max-width: 30vw;
+  margin-left: 1vw;
+  text-align: justify;
 }
 
 .link {
   width: 56.1vw;
 }
 
-.left {
-  background-color: teal;
-  height: max-content;
-  width: max-content;
-  text-align: justify;
-  transform: translate(5vw, -15vh);
-  border-radius: 3rem;
+.title {
+  padding: 2rem;
+  font-size: 2vw;
 }
 
-.right {
-  background-color: skyblue;
-  height: max-content;
-  width: max-content;
+.cena {
+  padding: 2rem;
+  padding-top: 0;
+  font-size: 1.5vw;
+  max-width: 30vw;
+}
+
+.size {
+  padding: 2rem;
+  padding-top: 0;
+  font-size: 1.5vw;
+  max-width: 30vw;
+}
+
+.content {
+  padding: 2rem;
+  padding-top: 0;
+  font-size: 1.2vw;
+  max-width: 30vw;
   text-align: justify;
-  transform: translate(0, 15vh);
-  border-radius: 0rem 3rem 3rem 3rem;
+}
+
+.size_left {
+  padding: 2rem;
+  padding-top: 0;
+  font-size: 1.5vw;
+  text-align: justify;
+  max-width: 30vw;
 }

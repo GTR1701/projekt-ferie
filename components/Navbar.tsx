@@ -25,40 +25,6 @@ export default function Navbar({ sticky }: any) {
   };
   if (sticky) {
     return (
-      <>
-        {!isVisible && (
-          <motion.div
-            className={!isVisible ? styles.transparent : styles.transparent}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-          >
-            <section className={styles.center}>
-              <Link className={styles.transparent_btn} href={"/"}>
-                HOTEL
-              </Link>
-              <Link className={styles.transparent_btn} href={"/Oferta"}>
-                PAKIETY
-              </Link>
-              <Link className={styles.transparent_btn} href={"/Pokoje"}>
-                POKOJE
-              </Link>
-              <Link className={styles.transparent_btn} href={"/Restauracje"}>
-                RESTAURACJE
-              </Link>
-              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
-                ATRAKCJE I USŁUGI
-              </Link>
-              <Link className={styles.transparent_btn} href={"/Kontakt"}>
-                KONTAKT
-              </Link>
-            </section>
-          </motion.div>
-        )}
-      </>
-    );
-  } else {
-    return (
       <AnimatePresence>
         {isVisible && (
           <motion.div
@@ -84,6 +50,9 @@ export default function Navbar({ sticky }: any) {
               <Link className={styles.btn} href={"/Atrakcje"}>
                 ATRAKCJE I USŁUGI
               </Link>
+              <Link className={styles.btn} href={"/Narty"}>
+                WYPOŻYCZALNIA
+              </Link>
               <Link className={styles.btn} href={"/Kontakt"}>
                 KONTAKT
               </Link>
@@ -91,6 +60,43 @@ export default function Navbar({ sticky }: any) {
           </motion.div>
         )}
       </AnimatePresence>
+    );
+  } else {
+    return (
+      <>
+        {!isVisible && (
+          <motion.div
+            className={!isVisible ? styles.transparent : styles.transparent}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+          >
+            <section className={styles.center}>
+              <Link className={styles.transparent_btn} href={"/"}>
+                HOTEL
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Oferta"}>
+                PAKIETY
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Pokoje"}>
+                POKOJE
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Restauracje"}>
+                RESTAURACJE
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
+                ATRAKCJE I USŁUGI
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
+                WYPOŻYCZALNIA
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Kontakt"}>
+                KONTAKT
+              </Link>
+            </section>
+          </motion.div>
+        )}
+      </>
     );
   }
 }

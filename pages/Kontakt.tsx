@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img
-        className={styles.banner}
+        className="banner"
         alt=""
         width="100%"
         height="100%"
@@ -23,7 +23,7 @@ export default function Home() {
       />
       <Navbar sticky={false} />
       <Navbar sticky={true} />
-      <div className={styles.space}></div>
+      <div className="space"></div>
       <Image alt="" width={1550} height={600} src="/banner.jpg" />
       <Footer />
     </>

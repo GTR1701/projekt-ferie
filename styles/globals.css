@@ -17,3 +17,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.banner {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-height: 1000px;
+}
+
+.space {
+  height: 1200px;
+  width: 100%;
+}
