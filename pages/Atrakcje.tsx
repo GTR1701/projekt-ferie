@@ -22,7 +22,7 @@ export default function Home() {
         height="100%"
         src="https://images.unsplash.com/photo-1583416750470-965b2707b355?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       />
-      <Navbar sticky={false} />
+      <Navbar sticky={false} color="" />
       <div className="space"></div>
       <Section
         direction={"right"}
@@ -84,7 +84,7 @@ export default function Home() {
           "Hotel Atreus oferuje także strefę zabaw dla najmłodszych. Znajduje się w niej wewnętrzny plac zabaw, basen z piłkami oraz wiele zabawek."
         }
       />
-      <Navbar sticky={true} />
+      <Navbar sticky={true} color="" />
       <Footer />
     </>
   );

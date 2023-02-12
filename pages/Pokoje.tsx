@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img className="banner" alt="" src="/room.jpg" />
-      <Navbar sticky={false} />
+      <Navbar sticky={false} color="" />
       <div className="space"></div>
       <Section
         direction={"left"}
@@ -43,7 +43,7 @@ export default function Home() {
         }
       />
       <Image alt="" width="0" height="0" src="" />
-      <Navbar sticky={true} />
+      <Navbar sticky={true} color={""} />
       <Footer />
     </>
   );

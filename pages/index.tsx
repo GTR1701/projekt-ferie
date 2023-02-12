@@ -16,12 +16,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
-        className="banner"
-        alt=""
-        src="https://images.unsplash.com/photo-1667293272142-21d22f60acf5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-      />
-      <Navbar sticky={false} />
+      <img className="banner" alt="" src="/home.jpg" />
+      <Navbar sticky={false} color="" />
       {/* <motion.h1
         initial={{ opacity: 0, translateX: "-200px" }}
         whileInView={{
@@ -65,7 +61,7 @@ export default function Home() {
         content="Hotel Atreus oferuje śniadania oraz obiado-kolacje w hotelowej restauracji. Poza wyznaczonymi godzinami posiłków, restauracja dostępna jest dla wszystkich gości hotelu. Oferujemy szeroką gamę przystawek, dań, napoi oraz deserów."
         page="/Restauracje"
       />
-      <Navbar sticky={true} />
+      <Navbar sticky={true} color="" />
       <Footer />
     </>
   );

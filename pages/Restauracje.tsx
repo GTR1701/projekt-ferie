@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img className="banner" alt="" src="/restauracja.jpg" />
-      <Navbar sticky={false} />
+      <Navbar sticky={false} color="" />
       <div className="space"></div>
       <Section
         direction={"right"}
@@ -56,7 +56,7 @@ export default function Home() {
           "Nasz Lobby Bar oferuje szeroki wybór alkoholi, drinków, jak i koktajli bezalkoholowych, serwowanych przez profesjonalnych barmanów"
         }
       />
-      <Navbar sticky={true} />
+      <Navbar sticky={true} color={""} />
       <Footer />
     </>
   );
