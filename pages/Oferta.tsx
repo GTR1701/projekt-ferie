@@ -21,7 +21,7 @@ export default function Home() {
         height="100%"
         src="/banner.jpg"
       />
-      <Navbar sticky={false} color="" />
+      <Navbar sticky={false} />
       <Navbar sticky={true} color={""} />
       <div className="space"></div>
       <Image alt="" width={1550} height={600} src="/banner.jpg" />

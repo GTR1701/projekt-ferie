@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img className="banner" alt="" src="/home.jpg" />
-      <Navbar sticky={false} color="" />
+      <Navbar sticky={false} />
       {/* <motion.h1
         initial={{ opacity: 0, translateX: "-200px" }}
         whileInView={{
@@ -61,7 +61,7 @@ export default function Home() {
         content="Hotel Atreus oferuje śniadania oraz obiado-kolacje w hotelowej restauracji. Poza wyznaczonymi godzinami posiłków, restauracja dostępna jest dla wszystkich gości hotelu. Oferujemy szeroką gamę przystawek, dań, napoi oraz deserów."
         page="/Restauracje"
       />
-      <Navbar sticky={true} color="" />
+      <Navbar sticky={true} />
       <Footer />
     </>
   );

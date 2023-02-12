@@ -4,12 +4,7 @@ import Link from "next/link";
 import useMountTransition from "../hooks/useMountTransition";
 import { motion, AnimatePresence } from "framer-motion";
 
-interface Props {
-  sticky: boolean;
-  color: string;
-}
-
-export default function Navbar({ sticky, color }: Props) {
+export default function Navbar({ sticky }: any) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -77,53 +72,25 @@ export default function Navbar({ sticky, color }: Props) {
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             <section className={styles.center}>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/"}
-              >
+              <Link className={styles.transparent_btn} href={"/"}>
                 HOTEL
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Oferta"}
-              >
+              <Link className={styles.transparent_btn} href={"/Oferta"}>
                 PAKIETY
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Pokoje"}
-              >
+              <Link className={styles.transparent_btn} href={"/Pokoje"}>
                 POKOJE
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Restauracje"}
-              >
+              <Link className={styles.transparent_btn} href={"/Restauracje"}>
                 RESTAURACJE
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Atrakcje"}
-              >
+              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
                 ATRAKCJE I USŁUGI
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Atrakcje"}
-              >
+              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
                 WYPOŻYCZALNIA
               </Link>
-              <Link
-                style={{ color: color }}
-                className={styles.transparent_btn}
-                href={"/Kontakt"}
-              >
+              <Link className={styles.transparent_btn} href={"/Kontakt"}>
                 KONTAKT
               </Link>
             </section>

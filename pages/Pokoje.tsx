@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <img className="banner" alt="" src="/room.jpg" />
-      <Navbar sticky={false} color="" />
+      <Navbar sticky={false} />
       <div className="space"></div>
       <Section
         direction={"left"}
