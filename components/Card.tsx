@@ -1,6 +1,7 @@
 import styles from "../styles/Card.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface cardProps {
   direction: string;
@@ -27,7 +28,13 @@ export default function Card({ direction, image, content, page }: cardProps) {
           whileTap={{ scale: 0.9 }}
           className={styles.card_left}
         >
-          <img className={styles.image} src={image} alt="" />
+          <Image
+            width="0"
+            height="0"
+            className={styles.image}
+            src={image}
+            alt=""
+          />
           <p className={styles.text}>{content}</p>
         </motion.div>
       </Link>
@@ -50,7 +57,13 @@ export default function Card({ direction, image, content, page }: cardProps) {
           className={styles.card_right}
         >
           <p className={styles.text}>{content}</p>
-          <img className={styles.image} src={image} alt="" />
+          <Image
+            width="0"
+            height="0"
+            className={styles.image}
+            src={image}
+            alt=""
+          />
         </motion.div>
       </Link>
     );

@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img className="banner" alt="" src="/home.jpg" />
+      <Image className="banner" width="0" height="0" alt="" src="/home.jpg" />
       <Navbar sticky={false} />
       {/* <motion.h1
         initial={{ opacity: 0, translateX: "-200px" }}
