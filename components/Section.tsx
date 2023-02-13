@@ -31,13 +31,7 @@ export default function Section({
         }}
         className={styles.section_left}
       >
-        <Image
-          className={styles.image}
-          width="0"
-          height="0"
-          src={image}
-          alt=""
-        />
+        <img className={styles.image} src={image} alt="" />
         <div>
           <h1 className={styles.title}>{name}</h1>
           <h3 className={styles.cena}>{price}</h3>
@@ -62,13 +56,7 @@ export default function Section({
           <p className={styles.size_left}>{size}</p>
           <p className={styles.content}>{content}</p>
         </div>
-        <Image
-          className={styles.image}
-          width="0"
-          height="0"
-          src={image}
-          alt=""
-        />
+        <img className={styles.image} src={image} alt="" />
       </motion.div>
     );
   }
