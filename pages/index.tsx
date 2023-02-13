@@ -1,11 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
-import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -16,21 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Image className="banner" width="0" height="0" alt="" src="/home.jpg" />
+      <img className="banner" alt="" src="/home.jpg" />
       <Navbar sticky={false} />
-      {/* <motion.h1
-        initial={{ opacity: 0, translateX: "-200px" }}
-        whileInView={{
-          opacity: 1,
-          translateX: "0px",
-          transition: { duration: 1, delay: 0.3 },
-        }}
-        className={styles.tekst}
-      >
-        HOTEL ATREUS
-      </motion.h1> */}
       <div className="space"></div>
-      {/* <img alt="" src="/banner.jpg" /> */}
       <Card
         direction="left"
         image="https://media.istockphoto.com/id/1305177948/pl/zdj%C4%99cie/rodzina-z-ma%C5%82ymi-dzie%C4%87mi-w%C4%99druje-na-%C5%9Bwie%C5%BCym-powietrzu-latem-na-turze-spaceruj%C4%85c-po-tatrach.jpg?s=612x612&w=0&k=20&c=v-FUo6Ze9XLjqVFhlfgFvIBYgHyn-3wFZHwFbhRv8mE="
