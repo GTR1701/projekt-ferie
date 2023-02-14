@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar sticky={false} />
       <div className="space"></div>
       <Section
-        direction={"right"}
+        direction={"lefth1"}
         image={
           "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         }
@@ -49,7 +49,7 @@ export default function Home() {
         }
       />
       <Section
-        direction={"right"}
+        direction={"lefth1"}
         image={
           "https://images.unsplash.com/photo-1583417657209-d3dd44dc9c09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         }
@@ -73,7 +73,7 @@ export default function Home() {
         }
       />
       <Section
-        direction={"right"}
+        direction={"lefth1"}
         image={
           "https://images.unsplash.com/photo-1600821986515-3ef5b0f29f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=770&q=80"
         }

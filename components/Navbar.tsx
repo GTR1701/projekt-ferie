@@ -87,7 +87,7 @@ export default function Navbar({ sticky }: any) {
               <Link className={styles.transparent_btn} href={"/Atrakcje"}>
                 ATRAKCJE I USŁUGI
               </Link>
-              <Link className={styles.transparent_btn} href={"/Atrakcje"}>
+              <Link className={styles.transparent_btn} href={"/Narty"}>
                 WYPOŻYCZALNIA
               </Link>
               <Link className={styles.transparent_btn} href={"/Kontakt"}>

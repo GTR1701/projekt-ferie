@@ -22,7 +22,7 @@ export default function Home() {
           "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         }
         name={"Pokój Małżeński"}
-        price={"200zł/osobę za noc"}
+        price={"400zł/osobę za noc"}
         size={"Rozmiar: Pokój dwuosobowy"}
         content={
           "Pokój z łóżkiem małżeńskim, telewizorem oraz aneksem kuchennym."
@@ -34,7 +34,7 @@ export default function Home() {
           "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         }
         name={"Pokój Rodzinny"}
-        price={"250zł/osobę za noc"}
+        price={"350zł/osobę za noc"}
         size={"Pokój dwuosobowy z dostawką"}
         content={
           "Pokój z łóżkiem małżeńskim, rozkładaną kanapą, stołem telewizorem oraz aneksem kuchennym."

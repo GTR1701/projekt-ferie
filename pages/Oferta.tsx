@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Oferta.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Section from "../components/Section";
 
 export default function Home() {
   return (
@@ -16,14 +17,19 @@ export default function Home() {
       <img
         className="banner"
         alt=""
-        width="100%"
-        height="100%"
-        src="/banner.jpg"
+        src="https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       />
       <Navbar sticky={false} />
-      <Navbar sticky={true} color={""} />
       <div className="space"></div>
-      <Image alt="" width={1550} height={600} src="/banner.jpg" />
+      <Section
+        direction={"left"}
+        image={""}
+        name={"Pakiet Małżeński"}
+        price={"500zł/osobę za noc"}
+        size={"Zawiera pokój małżeński, śniadanie, obiadokolacja"}
+        content={""}
+      />
+      <Navbar sticky={true} color={""} />
       <Footer />
     </>
   );

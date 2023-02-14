@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Section from "../components/Section";
 
 export default function Home() {
   return (
@@ -13,17 +14,50 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Image
+      <img
         className="banner"
         alt=""
-        width={1000}
-        height={600}
-        src="/banner.jpg"
+        src="https://images.pexels.com/photos/376697/pexels-photo-376697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       />
       <Navbar sticky={false} color={""} />
-      <Navbar sticky={true} color={""} />
       <div className="space"></div>
-      <Image alt="" width={1550} height={600} src="/banner.jpg" />
+      <Section
+        direction={"right"}
+        image={
+          "https://images.pexels.com/photos/257961/pexels-photo-257961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+        name={"Wypożyczalnia sprzętu narciarskiego"}
+        price={""}
+        size={
+          "W okresie zimowym Nasz hotel oferuje usługę wypożyczenia oraz utrzymania sprzętu narciarskiego."
+        }
+        content={""}
+      />
+      <Section
+        direction={"lefth1"}
+        image={
+          "https://images.unsplash.com/photo-1486684338211-1a7ced564b0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        }
+        name={"Duży wybór sprzetu zimowego"}
+        price={""}
+        size={
+          "Nasza wypożyczalnia oferuje duży wybór nart, desek snowboardowych, oraz akcesorii narciarkich (kaski, buty narciarskie, buty snowboardowe, kije)."
+        }
+        content={""}
+      />
+      <Section
+        direction={"right"}
+        image={
+          "https://skiteam.pl/img/leoblog/b/4/296/lg-b-smarowanie_nart_blog.jpg"
+        }
+        name={"Usługi związane z prywatnym sprzętem"}
+        price={""}
+        size={
+          "Dla gości z własnym sprzętem oferujemy usługi ostrzenia, smarowania oraz suszenia nart, suszenia butów oraz przechowania kasków i kijków."
+        }
+        content={""}
+      />
+      <Navbar sticky={true} color={""} />
       <Footer />
     </>
   );
