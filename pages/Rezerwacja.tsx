@@ -97,7 +97,12 @@ export default function Book() {
             onClick={() => setRadio(false)}
           />
           <span></span>
-          <select name="pokoj" id="pokoj" disabled={!radio}>
+          <select
+            name="pokoj"
+            id="pokoj"
+            disabled={!radio}
+            className={styles.lista}
+          >
             <option id="1" value="">
               --wybierz pokój--
             </option>
@@ -110,7 +115,12 @@ export default function Book() {
           </select>
           <span></span>
           <span></span>
-          <select name="pakiet" id="pakiet" disabled={radio}>
+          <select
+            name="pakiet"
+            id="pakiet"
+            disabled={radio}
+            className={styles.lista}
+          >
             <option id="1p" value="">
               --wybierz pakiet--
             </option>

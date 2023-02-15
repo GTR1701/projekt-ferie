@@ -20,11 +20,11 @@
   margin-bottom: 20vh;
 }
 
-h2 {
+.prawo {
   text-align: right;
 }
 
-h2,
-p {
-  font-size: 1rem;
+.rozmiar,
+.prawo {
+  font-size: 1.3rem;
 }

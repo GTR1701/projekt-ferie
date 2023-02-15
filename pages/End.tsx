@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <div className={styles.message}>
         <div>
-          <h1>Dziękujemy za rezerwację!</h1>
+          <h1 className={styles.thanks}>Dziękujemy za rezerwację!</h1>
           <div className={styles.submit_cont}>
             <Link href={"/"}>
               <button className={styles.submit}>WRÓĆ NA STRONĘ GŁÓWNĄ</button>

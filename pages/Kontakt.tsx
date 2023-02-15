@@ -17,19 +17,20 @@ export default function Book() {
       <div className={styles.space}></div>
       <h1 className={styles.header}>Dane Kontaktowe</h1>
       <div className={styles.container}>
-        <h2>Nr. telefonu: </h2>
-        <p>123 456 789</p>
-        <h2>Adres E-Mail: </h2>
-        <p>info@hotelatreus.pl</p>
-        <h2>Ulica: </h2>
-        <p>Wypoczynkowa 4</p>
-        <h2>Miasto: </h2>
-        <p>Szklarska Poręba</p>
-        <h2>Recepcja: </h2>
-        <p>recepcja@hotelatreus.pl</p>
-        <h2>Recepcja tel.: </h2>
-        <p>112 345 678</p>
+        <h2 className={styles.prawo}>Nr. telefonu: </h2>
+        <p className={styles.rozmiar}>123 456 789</p>
+        <h2 className={styles.prawo}>Adres E-Mail: </h2>
+        <p className={styles.rozmiar}>info@hotelatreus.pl</p>
+        <h2 className={styles.prawo}>Ulica: </h2>
+        <p className={styles.rozmiar}>Wypoczynkowa 4</p>
+        <h2 className={styles.prawo}>Miasto: </h2>
+        <p className={styles.rozmiar}>Szklarska Poręba</p>
+        <h2 className={styles.prawo}>Recepcja: </h2>
+        <p className={styles.rozmiar}>recepcja@hotelatreus.pl</p>
+        <h2 className={styles.prawo}>Recepcja tel.: </h2>
+        <p className={styles.rozmiar}>112 345 678</p>
       </div>
+      <Navbar sticky={true} />
       <Footer />
     </>
   );
