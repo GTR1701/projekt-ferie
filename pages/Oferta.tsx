@@ -23,11 +23,55 @@ export default function Home() {
       <div className="space"></div>
       <Section
         direction={"left"}
-        image={""}
-        name={"Pakiet Małżeński"}
-        price={"500zł/osobę za noc"}
-        size={"Zawiera pokój małżeński, śniadanie, obiadokolacja"}
-        content={""}
+        image={
+          "https://images.pexels.com/photos/3756452/pexels-photo-3756452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+        name={"Pakiet Małżeński z Pełnym Wyżywieniem"}
+        price={"470zł/osobę za noc"}
+        size={"W pakiecie pokój małżeński, śniadanie oraz obiadokolacja"}
+        content={"Minimum 2 noce"}
+      />
+      <Section
+        direction={"right"}
+        image={
+          "https://images.pexels.com/photos/6392948/pexels-photo-6392948.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+        name={"Pakiet Małżeński ze Śniadaniem"}
+        price={"440zł/osobę za noc"}
+        size={"W pakiecie pokój małżeński ze śniadaniem"}
+        content={"Minimum 2 noce"}
+      />
+      <Section
+        direction={"left"}
+        image={
+          "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        }
+        name={"Pakiet Rodzinny z Pełnym Wyżywieniem"}
+        price={"420zł/osobę za noc"}
+        size={"W pakiecie pokój rodzinny, śniadanie oraz obiadokolacja"}
+        content={"Minimum 2 noce"}
+      />
+      <Section
+        direction={"right"}
+        image={
+          "https://images.unsplash.com/photo-1503431153573-96e959f4d9b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+        }
+        name={"Pakiet Rodzinny ze Śniadaniem"}
+        price={"385zł/osobę za noc"}
+        size={"W pakiecie pokój rodzinny ze śniadaniem"}
+        content={"Minimum 2 noce"}
+      />
+      <Section
+        direction={"left"}
+        image={
+          "https://media.istockphoto.com/id/156148735/pl/zdj%C4%99cie/rodzina-gra-z-%C5%9Bnieg-na-nartach.jpg?s=612x612&w=0&k=20&c=R6nk7Zr_FSER4u-z9iPrZqn2cV0yKPWGl7HDnsvTBsY="
+        }
+        name={"Pakiet Ski Holidays"}
+        price={"475zł/osobę za noc"}
+        size={
+          "W pakiecie pokój rodzinny, pełne wyżywienie oraz Skipass dla każdej osoby na tydzień (4 godziny dziennie)."
+        }
+        content={"Minimum 7 nocy"}
       />
       <Navbar sticky={true} color={""} />
       <Footer />

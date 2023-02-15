@@ -56,6 +56,9 @@ export default function Navbar({ sticky }: any) {
               <Link className={styles.btn} href={"/Kontakt"}>
                 KONTAKT
               </Link>
+              <Link className={styles.btn} href={"/Rezerwacja"}>
+                ZAREZERWUJ
+              </Link>
             </section>
           </motion.div>
         )}
@@ -92,6 +95,9 @@ export default function Navbar({ sticky }: any) {
               </Link>
               <Link className={styles.transparent_btn} href={"/Kontakt"}>
                 KONTAKT
+              </Link>
+              <Link className={styles.transparent_btn} href={"/Rezerwacja"}>
+                ZAREZERWUJ
               </Link>
             </section>
           </motion.div>

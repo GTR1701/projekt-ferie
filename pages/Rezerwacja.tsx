@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import styles from "../styles/Rezerwacja.module.css";
 
 export default function Book() {
   return (
@@ -11,10 +12,19 @@ export default function Book() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img className="banner" alt="" src="/home.jpg" />
+      <img
+        className="banner"
+        alt=""
+        src="https://images.unsplash.com/photo-1621293954908-907159247fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      />
       <Navbar sticky={false} />
-      <div className="space"></div>
-
+      <div className={styles.rezerwacja}></div>
+      <form>
+        <div className="rezerwacja">
+          <label htmlFor="od">Data przyjazdu:</label>
+          <input type="text" name="od" id="od" />
+        </div>
+      </form>
       <Navbar sticky={true} />
       <Footer />
     </>
