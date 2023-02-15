@@ -2,8 +2,21 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../styles/Rezerwacja.module.css";
+import Calendar from "react-calendar";
+import { useState, useEffect } from "react";
+import "react-calendar/dist/Calendar.css";
+import "react-hot-toast";
 
 export default function Book() {
+  const [przyjazd, setPrzyjazd] = useState(new Date());
+  const [wyjazd, setWyjazd] = useState(new Date());
+  const [prawidlowaData, setPrawidlowaData] = useState(true);
+  useEffect(() => {
+    if (przyjazd >= wyjazd) {
+      setPrawidlowaData(false);
+    } else setPrawidlowaData(true);
+  }, [prawidlowaData]);
+
   return (
     <>
       <Head>
@@ -18,11 +31,55 @@ export default function Book() {
         src="https://images.unsplash.com/photo-1621293954908-907159247fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
       />
       <Navbar sticky={false} />
-      <div className={styles.rezerwacja}></div>
+      <div className="space"></div>
       <form>
-        <div className="rezerwacja">
+        <div className={styles.rezerwacja}>
           <label htmlFor="od">Data przyjazdu:</label>
-          <input type="text" name="od" id="od" />
+          <input
+            type="text"
+            name="od"
+            id="od"
+            disabled
+            value={przyjazd.toLocaleDateString("pl", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          />
+          <label htmlFor="do">Data wyjazdu:</label>
+          <input
+            type="text"
+            name="od"
+            id="od"
+            disabled
+            value={wyjazd.toLocaleDateString("pl", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          />
+          <span></span>
+          <Calendar onChange={setPrzyjazd} value={przyjazd} />
+          <span></span>
+          <Calendar onChange={setWyjazd} value={wyjazd} />
+          <label htmlFor="typ">Pokój</label>
+          <input type="radio" name="typ" id="typ" value={"Pokój"} />
+          <label htmlFor="typ">Pakiet</label>
+          <input
+            type="radio"
+            style={{ float: "left" }}
+            name="typ"
+            id="typ"
+            value={"Pakiet"}
+          />
+          <span></span>
+          <select name="pokoj" id="pokoj">
+            <option value="">--wybierz pokój--</option>
+            <option value="Małżeński">Małżeński</option>
+            <option value="Rodzinny">Rodzinny</option>
+          </select>
         </div>
       </form>
       <Navbar sticky={true} />
