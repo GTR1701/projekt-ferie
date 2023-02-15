@@ -47,7 +47,7 @@
   gap: 25px;
 }
 
-h1 {
+.naglowek {
   margin-bottom: 10vh;
   text-align: center;
   width: fit-content;

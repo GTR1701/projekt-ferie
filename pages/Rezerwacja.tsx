@@ -77,7 +77,7 @@ export default function Book() {
           <Calendar onChange={setWyjazd} value={wyjazd} />
         </div>
 
-        <h1>Wybierz typ rezerwacji</h1>
+        <h1 className={styles.naglowek}>Wybierz typ rezerwacji</h1>
         <div className={styles.pokoje}>
           <label htmlFor="typ">Pokój</label>
           <input
@@ -142,7 +142,7 @@ export default function Book() {
           </select>
         </div>
 
-        <h1>Wypełnij dane</h1>
+        <h1 className={styles.naglowek}>Wypełnij dane</h1>
         <div className={styles.dane}>
           <input
             required
