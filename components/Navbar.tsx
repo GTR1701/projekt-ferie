@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
-import useMountTransition from "../hooks/useMountTransition";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar({ sticky }: any) {

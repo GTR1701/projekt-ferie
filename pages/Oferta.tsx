@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Oferta.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
@@ -27,7 +25,7 @@ export default function Home() {
           "https://images.pexels.com/photos/3756452/pexels-photo-3756452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
         name={"Pakiet Małżeński z Pełnym Wyżywieniem"}
-        price={"470zł/osobę za noc"}
+        price={"460zł/osobę za noc"}
         size={"W pakiecie pokój małżeński, śniadanie oraz obiadokolacja"}
         content={"Minimum 2 noce"}
       />
@@ -67,7 +65,7 @@ export default function Home() {
           "https://media.istockphoto.com/id/156148735/pl/zdj%C4%99cie/rodzina-gra-z-%C5%9Bnieg-na-nartach.jpg?s=612x612&w=0&k=20&c=R6nk7Zr_FSER4u-z9iPrZqn2cV0yKPWGl7HDnsvTBsY="
         }
         name={"Pakiet Ski Holidays"}
-        price={"475zł/osobę za noc"}
+        price={"495zł/osobę za noc"}
         size={
           "W pakiecie pokój rodzinny, pełne wyżywienie oraz Skipass dla każdej osoby na tydzień (4 godziny dziennie)."
         }

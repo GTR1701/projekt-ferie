@@ -1,15 +1,95 @@
 .rezerwacja {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, auto);
-    width: 55vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30vh;
-    text-align: right;
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: auto;
+  width: 65vw;
+  place-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10vh;
+  gap: 25px;
+}
+
+.dane {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(6, auto);
+  width: fit-content;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10vh;
+  gap: 25px;
+}
+
+.dane > input {
+  width: 20vw;
+  height: 5vh;
 }
 
 option {
-    text-align: center;
+  text-align: center;
+}
+
+.center_input {
+  text-align: center;
+}
+
+.pokoje {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
+  width: 30vw;
+  place-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10vh;
+  gap: 25px;
+}
+
+h1 {
+  margin-bottom: 10vh;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kalendarze {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 65vw;
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+  margin-bottom: 10vh;
+}
+
+.submit {
+  margin-left: auto;
+  margin-right: auto;
+  width: 15vw;
+  height: 12vh;
+  margin-bottom: 10vh;
+  background-color: #177e89;
+  border: 3px solid #084c61;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #084c61;
+  transition-duration: 0.3s;
+}
+
+.submit:not(hover) {
+  background-color: #177e89;
+  transition-duration: 0.3s;
+}
+
+.submit_cont {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }

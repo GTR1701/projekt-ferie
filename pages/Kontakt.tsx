@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import styles from "../styles/Kontakt.module.css";
 
 export default function Book() {
   return (
@@ -13,9 +14,22 @@ export default function Book() {
       </Head>
       <img className="banner" alt="" src="/home.jpg" />
       <Navbar sticky={false} />
-      <div className="space"></div>
-
-      <Navbar sticky={true} />
+      <div className={styles.space}></div>
+      <h1 className={styles.header}>Dane Kontaktowe</h1>
+      <div className={styles.container}>
+        <h2>Nr. telefonu: </h2>
+        <p>123 456 789</p>
+        <h2>Adres E-Mail: </h2>
+        <p>info@hotelatreus.pl</p>
+        <h2>Ulica: </h2>
+        <p>Wypoczynkowa 4</p>
+        <h2>Miasto: </h2>
+        <p>Szklarska Poręba</p>
+        <h2>Recepcja: </h2>
+        <p>recepcja@hotelatreus.pl</p>
+        <h2>Recepcja tel.: </h2>
+        <p>112 345 678</p>
+      </div>
       <Footer />
     </>
   );

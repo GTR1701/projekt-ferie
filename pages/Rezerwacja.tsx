@@ -6,16 +6,25 @@ import Calendar from "react-calendar";
 import { useState, useEffect } from "react";
 import "react-calendar/dist/Calendar.css";
 import "react-hot-toast";
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function Book() {
   const [przyjazd, setPrzyjazd] = useState(new Date());
   const [wyjazd, setWyjazd] = useState(new Date());
   const [prawidlowaData, setPrawidlowaData] = useState(true);
+  const [radio, setRadio] = useState(true);
+
   useEffect(() => {
-    if (przyjazd >= wyjazd) {
-      setPrawidlowaData(false);
-    } else setPrawidlowaData(true);
-  }, [prawidlowaData]);
+    if (przyjazd >= wyjazd) setPrawidlowaData(false);
+    else setPrawidlowaData(true);
+  }, [przyjazd, wyjazd]);
+
+  const notify = () => {
+    if (!prawidlowaData) {
+      toast.error("wybierz prawidłową datę");
+    }
+  };
 
   return (
     <>
@@ -39,6 +48,7 @@ export default function Book() {
             type="text"
             name="od"
             id="od"
+            className={styles.center_input}
             disabled
             value={przyjazd.toLocaleDateString("pl", {
               weekday: "long",
@@ -52,6 +62,7 @@ export default function Book() {
             type="text"
             name="od"
             id="od"
+            className={styles.center_input}
             disabled
             value={wyjazd.toLocaleDateString("pl", {
               weekday: "long",
@@ -60,26 +71,133 @@ export default function Book() {
               day: "numeric",
             })}
           />
-          <span></span>
+        </div>
+        <div className={styles.kalendarze}>
           <Calendar onChange={setPrzyjazd} value={przyjazd} />
-          <span></span>
           <Calendar onChange={setWyjazd} value={wyjazd} />
+        </div>
+
+        <h1>Wybierz typ rezerwacji</h1>
+        <div className={styles.pokoje}>
           <label htmlFor="typ">Pokój</label>
-          <input type="radio" name="typ" id="typ" value={"Pokój"} />
+          <input
+            type="radio"
+            name="typ"
+            id="typ"
+            value={"Pokój"}
+            onClick={() => setRadio(true)}
+          />
+          <span> </span>
           <label htmlFor="typ">Pakiet</label>
           <input
             type="radio"
-            style={{ float: "left" }}
             name="typ"
             id="typ"
             value={"Pakiet"}
+            onClick={() => setRadio(false)}
           />
           <span></span>
-          <select name="pokoj" id="pokoj">
-            <option value="">--wybierz pokój--</option>
-            <option value="Małżeński">Małżeński</option>
-            <option value="Rodzinny">Rodzinny</option>
+          <select name="pokoj" id="pokoj" disabled={!radio}>
+            <option id="1" value="">
+              --wybierz pokój--
+            </option>
+            <option id="2" value={400}>
+              Małżeński
+            </option>
+            <option id="3" value="350">
+              Rodzinny
+            </option>
           </select>
+          <span></span>
+          <span></span>
+          <select name="pakiet" id="pakiet" disabled={radio}>
+            <option id="1p" value="">
+              --wybierz pakiet--
+            </option>
+            <option id="2p" value="470">
+              Pakiet Małżeński z Pełnym Wyżywieniem
+            </option>
+            <option id="3p" value="440">
+              Pakiet Małżeński ze Śniadaniem
+            </option>
+            <option id="4p" value="420">
+              Pakiet Rodzinny z Pełnym Wyżywieniem
+            </option>
+            <option id="5p" value="385">
+              Pakiet Rodzinny ze Śniadaniem
+            </option>
+            <option id="6p" value="495">
+              Pakiet Ski Holidays
+            </option>
+          </select>
+        </div>
+
+        <h1>Wypełnij dane</h1>
+        <div className={styles.dane}>
+          <input
+            required
+            type="text"
+            name="noce"
+            id="noce"
+            placeholder="Ilość nocy"
+          />
+          <input
+            required
+            type="text"
+            name="osoby"
+            id="osoby"
+            placeholder="Ilośc osób"
+          />
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Imię i nazwisko"
+          />
+          <input
+            required
+            type="text"
+            name="mail"
+            id="mail"
+            placeholder="Adres e-mail"
+          />
+          <input
+            required
+            type="text"
+            name="tel"
+            id="tel"
+            placeholder="Numer telefonu"
+          />
+          <input
+            required
+            type="text"
+            name="ulica"
+            id="ulica"
+            placeholder="Ulica"
+          />
+          <input
+            required
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            placeholder="Kod pocztowy"
+          />
+          <input
+            required
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Miasto"
+          />
+        </div>
+
+        <div className={styles.submit_cont} onMouseEnter={() => notify()}>
+          <Link href={"/End"}>
+            <button disabled={!prawidlowaData} className={styles.submit}>
+              ZAREZERWUJ
+            </button>
+          </Link>
         </div>
       </form>
       <Navbar sticky={true} />
