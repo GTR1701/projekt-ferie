@@ -144,69 +144,34 @@ export default function Book() {
 
         <h1 className={styles.naglowek}>Wypełnij dane</h1>
         <div className={styles.dane}>
+          <input type="text" name="noce" id="noce" placeholder="Ilość nocy" />
+          <input type="text" name="osoby" id="osoby" placeholder="Ilośc osób" />
           <input
-            required
-            type="text"
-            name="noce"
-            id="noce"
-            placeholder="Ilość nocy"
-          />
-          <input
-            required
-            type="text"
-            name="osoby"
-            id="osoby"
-            placeholder="Ilośc osób"
-          />
-          <input
-            required
             type="text"
             name="name"
             id="name"
             placeholder="Imię i nazwisko"
           />
+          <input type="text" name="mail" id="mail" placeholder="Adres e-mail" />
+          <input type="text" name="tel" id="tel" placeholder="Numer telefonu" />
+          <input type="text" name="ulica" id="ulica" placeholder="Ulica" />
           <input
-            required
-            type="text"
-            name="mail"
-            id="mail"
-            placeholder="Adres e-mail"
-          />
-          <input
-            required
-            type="text"
-            name="tel"
-            id="tel"
-            placeholder="Numer telefonu"
-          />
-          <input
-            required
-            type="text"
-            name="ulica"
-            id="ulica"
-            placeholder="Ulica"
-          />
-          <input
-            required
             type="text"
             name="zipcode"
             id="zipcode"
             placeholder="Kod pocztowy"
           />
-          <input
-            required
-            type="text"
-            name="city"
-            id="city"
-            placeholder="Miasto"
-          />
+          <input type="text" name="city" id="city" placeholder="Miasto" />
         </div>
 
         <div className={styles.submit_cont} onMouseEnter={() => notify()}>
           <Link href={"/End"}>
-            <button disabled={!prawidlowaData} className={styles.submit}>
-              ZAREZERWUJ
-            </button>
+            <input
+              type="submit"
+              disabled={!prawidlowaData}
+              className={styles.submit}
+              value="ZAREZERWUJ"
+            />
           </Link>
         </div>
       </form>
