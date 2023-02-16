@@ -18,7 +18,7 @@ export default function Card({ direction, image, content, page }: cardProps) {
           whileInView={{
             opacity: 1,
             translateX: "0px",
-            transition: { duration: 1, delay: 0.3 },
+            transition: { duration: 0.5, delay: 0.2 },
           }}
           whileHover={{
             scale: 1.1,
@@ -40,7 +40,7 @@ export default function Card({ direction, image, content, page }: cardProps) {
           whileInView={{
             opacity: 1,
             translateX: "0px",
-            transition: { duration: 1, delay: 0.3 },
+            transition: { duration: 0.5, delay: 0.2 },
           }}
           whileHover={{
             scale: 1.1,
