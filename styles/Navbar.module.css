@@ -15,7 +15,7 @@
 }
 
 .transparent {
-  background-color: transparent;
+  background-color: rgba(23, 126, 137, 0.3);
   width: 100%;
   height: 70px;
   position: absolute;
