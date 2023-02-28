@@ -1,10 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { signOut } from "firebase/auth";
+import { UserContext } from "../lib/context";
 
 export default function Navbar({ sticky }: any) {
   const [isVisible, setIsVisible] = useState(false);
+  const { user, username } = useContext(UserContext);
+
+  function SignOutButton() {
+    return (
+      <button className={styles.button} onClick={() => signOut(auth)}>
+        Sign Out
+      </button>
+    );
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
@@ -58,6 +70,17 @@ export default function Navbar({ sticky }: any) {
               <Link className={styles.btn} href={"/Rezerwacja"}>
                 ZAREZERWUJ
               </Link>
+              {username ? (
+                <Link
+                  href={"/Enter"}
+                  className={styles.btn}
+                  onClick={() => signOut(auth)}
+                >
+                  WYLOGUJ
+                </Link>
+              ) : (
+                <></>
+              )}
             </section>
           </motion.div>
         )}
@@ -98,6 +121,13 @@ export default function Navbar({ sticky }: any) {
               <Link className={styles.transparent_btn} href={"/Rezerwacja"}>
                 ZAREZERWUJ
               </Link>
+              {username ? (
+                <Link href={"/Enter"} className={styles.transparent_btn}>
+                  WYLOGUJ
+                </Link>
+              ) : (
+                <></>
+              )}
             </section>
           </motion.div>
         )}

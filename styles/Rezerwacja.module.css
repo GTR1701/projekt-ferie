@@ -22,13 +22,14 @@
   gap: 25px;
 }
 
-.dane > input {
+.dane>input {
   width: 20vw;
   height: 5vh;
 }
 
 .lista {
   text-align: center;
+  width: 20vw;
 }
 
 .center_input {
@@ -37,9 +38,9 @@
 
 .pokoje {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: auto 20vw auto 20vw auto;
   grid-template-rows: repeat(4, auto);
-  width: 30vw;
+  width: 75vw;
   place-items: center;
   margin-left: auto;
   margin-right: auto;
