@@ -14,25 +14,45 @@ function PostItem({ post, admin = false }) {
   return (
     <div className="card">
       <div className="tabela">
-        <h1>Imię i nazwisko: {post.imięINazwisko}</h1>
-        <h1>Data przyjazdu: {przyj.slice(4, 15)}</h1>
-        <h1>Data wyjazdu: {wyj.slice(4, 15)}</h1>
-        <h1>Ilość osób: {post.ilośćOsób}</h1>
-        <h1>Ilość nocy: {post.ilośćNocy}</h1>
-        <h1>Pokój/Pakiet: {post.pokojPakiet}</h1>
+        <p>
+          <b>Imię i nazwisko: </b>
+          {post.imięINazwisko}
+        </p>
+
+        <p>
+          <b>Data przyjazdu:</b> {przyj.slice(4, 15)}
+        </p>
+        <p>
+          <b>Data wyjazdu:</b> {wyj.slice(4, 15)}
+        </p>
+        <p>
+          <b>Ilość osób:</b> {post.ilośćOsób}
+        </p>
+        <p>
+          <b>Ilość nocy:</b> {post.ilośćNocy}
+        </p>
+        <p>
+          <b>Pokój/Pakiet:</b> {post.pokojPakiet}
+        </p>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         <h1>Dane kontaktowe</h1>
         <span></span>
-        <h1>Mail: {post.eMail}</h1>
-        <h1>Ulica: {post.Ulica}</h1>
-        <h1>
-          Miasto: {post.kodPocztowy} {post.miasto}
-        </h1>
+        <p>
+          <b>Mail:</b> {post.eMail}
+        </p>
+        <p>
+          <b>Ulica:</b> {post.Ulica}
+        </p>
+        <p>
+          <b>Miasto:</b> {post.kodPocztowy} {post.miasto}
+        </p>
         <span></span>
-        <h1>Nr. telefonu: {post.nrTelefonu}</h1>
+        <p>
+          <b>Nr. telefonu:</b> {post.nrTelefonu}
+        </p>
       </div>
 
       <footer>

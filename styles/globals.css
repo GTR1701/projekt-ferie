@@ -159,3 +159,9 @@ button.btn-logo {
   width: fit-content;
   margin: auto;
 }
+
+.user-books {
+  text-align: center;
+  margin: 2rem;
+  font-size: 2rem;
+}

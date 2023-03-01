@@ -42,6 +42,7 @@ export default function PostPage({ user, posts }) {
     <main>
       <Navbar sticky={false} />
       <UserProfile user={user} />
+      <h1 className="user-books">Rezerwacje</h1>
       <PostFeed posts={posts} />
       <Navbar sticky={true} />
     </main>
