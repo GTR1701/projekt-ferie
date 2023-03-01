@@ -25,15 +25,15 @@ export default function Book() {
   const [wyjazd, setWyjazd] = useState(new Date());
   const [prawidlowaData, setPrawidlowaData] = useState(true);
   const [radio, setRadio] = useState(true);
-  const [pokoj, setPokoj] = useState("");
-  const [noce, setNoce] = useState(0);
-  const [osoby, setOsoby] = useState(0);
-  const [imieNazwisko, setImieNazwisko] = useState("");
-  const [mail, setMail] = useState("");
-  const [tel, setTel] = useState(0);
-  const [ulica, setUlica] = useState("");
-  const [zip, setZip] = useState("");
-  const [miasto, setMiasto] = useState("");
+  const [pokoj, setPokoj] = useState();
+  const [noce, setNoce] = useState();
+  const [osoby, setOsoby] = useState();
+  const [imieNazwisko, setImieNazwisko] = useState();
+  const [mail, setMail] = useState();
+  const [tel, setTel] = useState();
+  const [ulica, setUlica] = useState();
+  const [zip, setZip] = useState();
+  const [miasto, setMiasto] = useState();
   const [change, setChange] = useState(false);
 
   const { user, username } = useContext(UserContext);
@@ -74,6 +74,16 @@ export default function Book() {
     });
     await batch.commit();
     toast.success("Rezerwacja udana. Dziękujemy za zaufanie!");
+    setRadio(null);
+    setPokoj(null);
+    setNoce(null);
+    setOsoby(null);
+    setImieNazwisko(null);
+    setMail(null);
+    setTel(null);
+    setUlica(null);
+    setZip(null);
+    setMiasto(null);
   };
 
   useEffect(() => {
@@ -124,7 +134,9 @@ export default function Book() {
               day: "numeric",
             })}
           />
-          <h1>Naciśnij podwójnie na dzień na kalendarzu</h1>
+          <h1 className={styles.nacisnij}>
+            Naciśnij podwójnie na dzień na kalendarzu
+          </h1>
           <label htmlFor="do">Data wyjazdu:</label>
           <input
             type="text"
@@ -181,6 +193,7 @@ export default function Book() {
             id="pokoj"
             disabled={!radio}
             className={styles.lista}
+            value={pokoj}
             onChange={(e) => setPokoj(e.target.value)}
           >
             <option id="1" value="">
@@ -201,6 +214,7 @@ export default function Book() {
             id="pakiet"
             disabled={radio}
             className={styles.lista}
+            value={pokoj}
             onChange={(e) => setPokoj(e.target.value)}
           >
             <option id="1p" value="">
@@ -242,6 +256,7 @@ export default function Book() {
             name="osoby"
             id="osoby"
             placeholder="Ilośc osób"
+            value={osoby}
             onChange={(e) => setOsoby(e.target.value)}
           />
           <input
@@ -250,6 +265,7 @@ export default function Book() {
             name="name"
             id="name"
             placeholder="Imię i nazwisko"
+            value={imieNazwisko}
             onChange={(e) => setImieNazwisko(e.target.value)}
           />
           <input
@@ -258,6 +274,7 @@ export default function Book() {
             name="mail"
             id="mail"
             placeholder="Adres e-mail"
+            value={mail}
             onChange={(e) => setMail(e.target.value)}
           />
           <input
@@ -266,6 +283,7 @@ export default function Book() {
             name="tel"
             id="tel"
             placeholder="Numer telefonu"
+            value={tel}
             onChange={(e) => setTel(e.target.value)}
           />
           <input
@@ -274,6 +292,7 @@ export default function Book() {
             name="ulica"
             id="ulica"
             placeholder="Ulica"
+            value={ulica}
             onChange={(e) => setUlica(e.target.value)}
           />
           <input
@@ -282,6 +301,7 @@ export default function Book() {
             name="zipcode"
             id="zipcode"
             placeholder="Kod pocztowy"
+            value={zip}
             onChange={(e) => setZip(e.target.value)}
           />
           <input
@@ -290,6 +310,7 @@ export default function Book() {
             name="city"
             id="city"
             placeholder="Miasto"
+            value={miasto}
             onChange={(e) => setMiasto(e.target.value)}
           />
         </div>
