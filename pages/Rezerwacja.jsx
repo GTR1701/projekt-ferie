@@ -5,6 +5,7 @@ import {
   getDoc,
   getFirestore,
   getCountFromServer,
+  collection,
 } from "firebase/firestore";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
@@ -33,51 +34,61 @@ export default function Book() {
   const [ulica, setUlica] = useState("");
   const [zip, setZip] = useState("");
   const [miasto, setMiasto] = useState("");
+  const [change, setChange] = useState(false);
+
+  const { user, username } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const Doc = doc(
+    const Doc = await collection(
       getFirestore(),
       "users",
-      auth.currentUser.uid,
+      user.uid,
       "Rezerwacje"
     );
     const snapshot = await getCountFromServer(Doc);
-    const count = snapshot.data().count;
+    const count = snapshot.data().count + 1;
+    console.log(count);
     const userDoc = doc(
       getFirestore(),
       "users",
-      auth.currentUser.uid,
+      user.uid,
       "Rezerwacje",
       `Rezerwacja ${count}`
     );
     const batch = writeBatch(getFirestore());
-    const content = {
-      "Data przyjazdu": przyjazd,
-      "Data wyjazdu": wyjazd,
-      "Pokój/Pakiet": pokoj,
-      "Ilość nocy": noce,
-      "Ilość osób": osoby,
-      "Imię i nazwisko": imieNazwisko,
-      "E-Mail": mail,
-      "Nr. Telefonu": tel,
+    batch.set(userDoc, {
+      dataPrzyjazdu: przyjazd,
+      dataWyjazdu: wyjazd,
+      pokojPakiet: pokoj,
+      ilośćNocy: noce,
+      ilośćOsób: osoby,
+      imięINazwisko: imieNazwisko,
+      eMail: mail,
+      nrTelefonu: tel,
       Ulica: ulica,
-      "Kod pocztowy": zip,
-      Miasto: miasto,
-    };
-    batch.set(userDoc, content);
+      kodPocztowy: zip,
+      miasto: miasto,
+      username: username,
+    });
     await batch.commit();
     toast.success("Rezerwacja udana. Dziękujemy za zaufanie!");
   };
 
   useEffect(() => {
-    if (przyjazd >= wyjazd) setPrawidlowaData(false);
-    else setPrawidlowaData(true);
-  }, [przyjazd, wyjazd]);
+    if (przyjazd >= wyjazd) {
+      const difference = przyjazd - wyjazd;
+      let dni = Math.ceil(difference / (1000 * 3600 * 24));
+      setPrawidlowaData(false);
+      setNoce(dni);
+    } else {
+      setPrawidlowaData(true);
+    }
+  }, [change]);
 
   const notify = () => {
-    if (!prawidlowaData) {
+    if (prawidlowaData) {
       toast.error("wybierz prawidłową datę");
     }
   };
@@ -106,13 +117,14 @@ export default function Book() {
             id="od"
             className={styles.center_input}
             disabled
-            value={przyjazd.toLocaleDateString("pl", {
+            value={wyjazd.toLocaleDateString("pl", {
               weekday: "long",
               year: "numeric",
               month: "short",
               day: "numeric",
             })}
           />
+          <h1>Naciśnij podwójnie na dzień na kalendarzu</h1>
           <label htmlFor="do">Data wyjazdu:</label>
           <input
             type="text"
@@ -120,7 +132,7 @@ export default function Book() {
             id="od"
             className={styles.center_input}
             disabled
-            value={wyjazd.toLocaleDateString("pl", {
+            value={przyjazd.toLocaleDateString("pl", {
               weekday: "long",
               year: "numeric",
               month: "short",
@@ -129,8 +141,16 @@ export default function Book() {
           />
         </div>
         <div className={styles.kalendarze}>
-          <Calendar onChange={setPrzyjazd} value={przyjazd} />
-          <Calendar onChange={setWyjazd} value={wyjazd} />
+          <Calendar
+            onClickDay={setChange}
+            onChange={setWyjazd}
+            value={wyjazd}
+          />
+          <Calendar
+            onClickDay={setChange}
+            onChange={setPrzyjazd}
+            value={przyjazd}
+          />
         </div>
 
         <h1 className={styles.naglowek}>Wybierz typ rezerwacji</h1>
@@ -166,10 +186,10 @@ export default function Book() {
             <option id="1" value="">
               --wybierz pokój--
             </option>
-            <option id="2" value={400}>
+            <option id="2" value="Małżeński">
               Małżeński
             </option>
-            <option id="3" value="350">
+            <option id="3" value="Rodzinny">
               Rodzinny
             </option>
           </select>
@@ -186,19 +206,19 @@ export default function Book() {
             <option id="1p" value="">
               --wybierz pakiet--
             </option>
-            <option id="2p" value="470">
+            <option id="2p" value="Pakiet Małżeński z Pełnym Wyżywieniem">
               Pakiet Małżeński z Pełnym Wyżywieniem
             </option>
-            <option id="3p" value="440">
+            <option id="3p" value="Pakiet Małżeński ze Śniadaniem">
               Pakiet Małżeński ze Śniadaniem
             </option>
-            <option id="4p" value="420">
+            <option id="4p" value="Pakiet Rodzinny z Pełnym Wyżywieniem">
               Pakiet Rodzinny z Pełnym Wyżywieniem
             </option>
-            <option id="5p" value="385">
+            <option id="5p" value="Pakiet Rodzinny ze Śniadaniem">
               Pakiet Rodzinny ze Śniadaniem
             </option>
-            <option id="6p" value="495">
+            <option id="6p" value="Pakiet Ski Holidays">
               Pakiet Ski Holidays
             </option>
           </select>
@@ -206,12 +226,14 @@ export default function Book() {
 
         <h1 className={styles.naglowek}>Wypełnij dane</h1>
         <div className={styles.dane}>
+          <label htmlFor="noce">Noce:</label>
+          <span></span>
           <input
-            required={true}
-            type="number"
+            disabled={true}
+            type="text"
             name="noce"
             id="noce"
-            placeholder="Ilość nocy"
+            value={noce}
             onChange={(e) => setNoce(e.target.value)}
           />
           <input
@@ -275,7 +297,7 @@ export default function Book() {
         <div className={styles.submit_cont} onMouseEnter={() => notify()}>
           <input
             type="submit"
-            disabled={!prawidlowaData}
+            disabled={prawidlowaData}
             className={styles.submit}
             value="ZAREZERWUJ"
           />{" "}

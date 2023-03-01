@@ -31,11 +31,13 @@
   transform: translateY(-70px);
 }
 
-.transparent_btn {
+.transparent_btn,
+.zdjecie_transparent {
   background-color: transparent;
   border: 0;
   padding: 1.5rem;
   color: white;
+  font-size: 1rem;
 }
 
 .transparent_btn:hover {
@@ -53,6 +55,8 @@
   border: 0;
   padding: 1.5rem;
   color: white;
+  width: auto;
+  font-size: 1rem;
 }
 
 .btn:hover {
@@ -75,4 +79,20 @@
 #sticky {
   position: sticky;
   top: 0;
+}
+
+.zdjecie_transparent > img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.zdjecie_transparent {
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+  float: right;
+  padding-top: 0;
+  transform: translateY(-1rem);
 }

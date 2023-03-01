@@ -44,7 +44,7 @@ button {
   text-align: center;
   justify-content: center;
   text-decoration: none;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: bold;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -57,7 +57,6 @@ button {
     font-size: 0.8rem;
   }
 }
-
 
 button:hover {
   filter: brightness(90%);
@@ -105,11 +104,58 @@ button.btn-logo {
 }
 
 .musisz {
-  padding-top: 30vh;
+  margin-top: 30vh;
   margin-left: 25vw;
-  font-size: 3rem;
+  font-size: 2rem;
   width: 30vw;
-  height: 5rem;
-  background-color: skyblue;
+  height: auto;
   border-radius: 1rem;
+  background-color: white;
+}
+
+.card-img-center {
+  width: 20%;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  max-width: 150px;
+}
+
+.box-center {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.box-center > p {
+  margin: 1rem;
+}
+
+.card {
+  padding: 2rem;
+  margin: 1rem auto;
+  background-color: white;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  width: 60vw;
+}
+
+.card footer {
+  display: flex;
+}
+
+.push-left {
+  margin-left: auto;
+}
+
+.tabela {
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw;
+  grid-template-rows: auto auto auto;
+  place-items: center;
+  row-gap: 1rem;
+  width: fit-content;
+  margin: auto;
 }

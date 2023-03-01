@@ -71,13 +71,17 @@ export default function Navbar({ sticky }: any) {
                 ZAREZERWUJ
               </Link>
               {username ? (
-                <Link
-                  href={"/Enter"}
-                  className={styles.btn}
-                  onClick={() => signOut(auth)}
-                >
-                  WYLOGUJ
-                </Link>
+                <>
+                  <Link href={"/Enter"} className={styles.btn}>
+                    WYLOGUJ
+                  </Link>
+                  <Link
+                    className={styles.zdjecie_transparent}
+                    href={`/${username}`}
+                  >
+                    <img src={user?.photoURL} />
+                  </Link>
+                </>
               ) : (
                 <></>
               )}
@@ -122,9 +126,17 @@ export default function Navbar({ sticky }: any) {
                 ZAREZERWUJ
               </Link>
               {username ? (
-                <Link href={"/Enter"} className={styles.transparent_btn}>
-                  WYLOGUJ
-                </Link>
+                <>
+                  <Link href={"/Enter"} className={styles.transparent_btn}>
+                    WYLOGUJ
+                  </Link>
+                  <Link
+                    className={styles.zdjecie_transparent}
+                    href={`/${username}`}
+                  >
+                    <img src={user?.photoURL} />
+                  </Link>
+                </>
               ) : (
                 <></>
               )}

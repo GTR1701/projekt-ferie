@@ -9,7 +9,7 @@ export default function AuthCheck(props) {
   return username
     ? props.children
     : props.fallback || (
-        <Link className="musisz" href="/Enter">
+        <Link className="btn btn-google musisz" href="/Enter">
           Musisz być zalogowany
         </Link>
       );
