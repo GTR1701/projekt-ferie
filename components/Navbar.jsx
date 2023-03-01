@@ -6,7 +6,7 @@ import { auth, firestore, googleAuthProvider } from "../lib/firebase";
 import { signOut } from "firebase/auth";
 import { UserContext } from "../lib/context";
 
-export default function Navbar({ sticky }: any) {
+export default function Navbar({ sticky }) {
   const [isVisible, setIsVisible] = useState(false);
   const { user, username } = useContext(UserContext);
 

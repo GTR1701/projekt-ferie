@@ -18,9 +18,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "pages/Enter.jsx",
-    "pages/Rezerwacja.jsx"
-  ],
+    "**/*.tsx",  ],
   "exclude": ["node_modules"]
 }
