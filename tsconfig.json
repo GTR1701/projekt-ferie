@@ -18,6 +18,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",  ],
+    "**/*.tsx", "pages/_app.jsx", "components/AuthCheck.jsx",  ],
   "exclude": ["node_modules"]
 }

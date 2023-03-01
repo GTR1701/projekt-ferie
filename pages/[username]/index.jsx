@@ -28,8 +28,7 @@ export async function getServerSideProps({ query: urlQuery }) {
     user = userDoc.data();
     const postsQuery = query(
       collection(getFirestore(), userDoc.ref.path, "Rezerwacje"),
-      where("dataWyjazdu", "!=", null),
-      limit(5)
+      where("dataWyjazdu", "!=", null)
     );
     posts = (await getDocs(postsQuery)).docs.map((e) => postToJSON(e));
   }
