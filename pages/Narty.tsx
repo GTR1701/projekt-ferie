@@ -17,7 +17,7 @@ export default function Home() {
         alt=""
         src="https://images.pexels.com/photos/376697/pexels-photo-376697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       />
-      <Navbar sticky={false} color={""} />
+      <Navbar sticky={false} />
       <div className="space"></div>
       <Section
         direction={"right"}
@@ -55,7 +55,7 @@ export default function Home() {
         }
         content={""}
       />
-      <Navbar sticky={true} color={""} />
+      <Navbar sticky={true} />
       <Footer />
     </>
   );

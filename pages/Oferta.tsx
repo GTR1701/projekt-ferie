@@ -71,7 +71,7 @@ export default function Home() {
         }
         content={"Minimum 7 nocy"}
       />
-      <Navbar sticky={true} color={""} />
+      <Navbar sticky={true} />
       <Footer />
     </>
   );

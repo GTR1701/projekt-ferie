@@ -39,7 +39,7 @@ export default function Home() {
           "Pokój z łóżkiem małżeńskim, rozkładaną kanapą, stołem telewizorem oraz aneksem kuchennym."
         }
       />
-      <Navbar sticky={true} color={""} />
+      <Navbar sticky={true} />
       <Footer />
     </>
   );

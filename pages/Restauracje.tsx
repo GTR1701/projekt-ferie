@@ -57,7 +57,7 @@ export default function Home() {
           "Nasz Lobby Bar oferuje szeroki wybór alkoholi, drinków, jak i koktajli bezalkoholowych, serwowanych przez profesjonalnych barmanów"
         }
       />
-      <Navbar sticky={true} color={""} />
+      <Navbar sticky={true} />
       <Footer />
     </>
   );
