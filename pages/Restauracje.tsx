@@ -22,7 +22,7 @@ export default function Home() {
         priority={true}
       />
       <Navbar sticky={false} />
-      <div className="space"></div>
+      <div className="space-o"></div>
       <Section
         direction={"right"}
         image={
