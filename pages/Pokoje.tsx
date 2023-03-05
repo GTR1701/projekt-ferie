@@ -19,7 +19,7 @@ export default function Home() {
         src="/Rooms.jpg"
         width={1920}
         height={860}
-        priority={true}
+        priority={false}
       />
       <Navbar sticky={false} />
       <div className="space"></div>

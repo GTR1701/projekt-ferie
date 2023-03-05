@@ -19,7 +19,7 @@ export default function Book() {
         src="/home.jpg"
         width={1920}
         height={860}
-        priority={true}
+        priority={false}
       />
       <Navbar sticky={false} />
       <div className={styles.space}></div>

@@ -115,7 +115,7 @@ export default function Book() {
         src="https://images.unsplash.com/photo-1621293954908-907159247fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
         width={1920}
         height={860}
-        priority={true}
+        priority={false}
       />
       <Navbar sticky={false} />
       <div className="space-o"></div>
