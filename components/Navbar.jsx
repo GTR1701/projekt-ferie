@@ -2,22 +2,12 @@ import { useState, useEffect, useContext } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { auth } from "../lib/firebase";
-import { signOut } from "firebase/auth";
 import { UserContext } from "../lib/context";
 import Image from "next/image";
 
 export default function Navbar({ sticky }) {
   const [isVisible, setIsVisible] = useState(false);
   const { user, username } = useContext(UserContext);
-
-  function SignOutButton() {
-    return (
-      <button className={styles.button} onClick={() => signOut(auth)}>
-        Sign Out
-      </button>
-    );
-  }
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);

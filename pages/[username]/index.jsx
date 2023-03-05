@@ -10,6 +10,7 @@ import UserProfile from "../../components/UserProfile";
 import PostFeed from "../../components/PostFeed";
 import Navbar from "../../components/Navbar";
 import Head from "next/head";
+import Footer from "../../components/Footer";
 
 export async function getServerSideProps({ query: urlQuery }) {
   const { username } = urlQuery;
@@ -51,6 +52,7 @@ export default function PostPage({ user, posts }) {
         <h1 className="user-books">Rezerwacje</h1>
         <PostFeed posts={posts} />
         <Navbar sticky={true} />
+        <Footer />
       </main>
     </>
   );

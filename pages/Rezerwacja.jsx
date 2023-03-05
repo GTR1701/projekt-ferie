@@ -33,6 +33,7 @@ export default function Book() {
   const [zip, setZip] = useState();
   const [miasto, setMiasto] = useState();
   const [change, setChange] = useState(false);
+  const [id, setId] = useState();
 
   const { user, username } = useContext(UserContext);
 
@@ -47,7 +48,7 @@ export default function Book() {
     );
     const snapshot = await getCountFromServer(Doc);
     const count = snapshot.data().count + 1;
-    console.log(count);
+    setId(toString(count));
     const userDoc = doc(
       getFirestore(),
       "users",
@@ -57,6 +58,7 @@ export default function Book() {
     );
     const batch = writeBatch(getFirestore());
     batch.set(userDoc, {
+      id: id,
       dataPrzyjazdu: przyjazd,
       dataWyjazdu: wyjazd,
       pokojPakiet: pokoj,

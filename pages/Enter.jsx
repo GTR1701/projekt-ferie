@@ -1,6 +1,6 @@
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { auth, googleAuthProvider } from "../lib/firebase";
 import { doc, writeBatch, getDoc, getFirestore } from "firebase/firestore";
-import { signInWithPopup, signInAnonymously, signOut } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 import { UserContext } from "../lib/context";
 import Metatags from "../components/Metatags";
 import styles from "../styles/Enter.module.css";
@@ -12,9 +12,6 @@ import Link from "next/link";
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
-  // 1. user signed out <SignInButton />
-  // 2. user signed in, but missing username <UsernameForm />
-  // 3. user signed in, has username <SignOutButton />
   return (
     <main>
       <Metatags title="Enter" description="Sign up for this amazing app!" />
@@ -45,7 +42,6 @@ export default function Enter(props) {
   );
 }
 
-// Sign in with Google button
 function SignInButton() {
   const signInWithGoogle = async () => {
     await signInWithPopup(auth, googleAuthProvider);
@@ -60,7 +56,6 @@ function SignInButton() {
   );
 }
 
-// Sign out button
 function SignOutButton() {
   return (
     <button className="btn-google" onClick={() => signOut(auth)}>
@@ -69,7 +64,6 @@ function SignOutButton() {
   );
 }
 
-// Username form
 function UsernameForm() {
   const [formValue, setFormValue] = useState("");
   const [isValid, setIsValid] = useState(false);
@@ -80,11 +74,9 @@ function UsernameForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // Create refs for both documents
     const userDoc = doc(getFirestore(), "users", user.uid);
     const usernameDoc = doc(getFirestore(), "usernames", formValue);
 
-    // Commit both docs together as a batch write.
     const batch = writeBatch(getFirestore());
     batch.set(userDoc, {
       username: formValue,
@@ -97,11 +89,9 @@ function UsernameForm() {
   };
 
   const onChange = (e) => {
-    // Force form value typed in form to match correct format
     const val = e.target.value.toLowerCase();
     const re = /^(?=[a-zA-Z0-9._]{3,15}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 
-    // Only set form value if length is < 3 OR it passes regex
     if (val.length < 3) {
       setFormValue(val);
       setLoading(false);
@@ -115,14 +105,10 @@ function UsernameForm() {
     }
   };
 
-  //
-
   useEffect(() => {
     checkUsername(formValue);
   }, [formValue]);
 
-  // Hit the database for username match after each debounced change
-  // useCallback is required for debounce to work
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3) {

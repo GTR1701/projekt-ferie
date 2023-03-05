@@ -168,3 +168,16 @@ button.btn-logo {
   margin: 2rem;
   font-size: 2rem;
 }
+
+.footer {
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  background-color: #ffc857;
+}
+
+.tekst {
+  padding-top: 1.8rem;
+}

@@ -1,8 +1,6 @@
 export default function PostFeed({ posts, admin }) {
   return posts
-    ? posts.map((post) => (
-        <PostItem post={post} key={posts.nrTelefonu} admin={admin} />
-      ))
+    ? posts.map((post) => <PostItem post={post} key={posts.id} admin={admin} />)
     : null;
 }
 
@@ -52,11 +50,6 @@ function PostItem({ post, admin = false }) {
           <b>Nr. telefonu:</b> {post.nrTelefonu}
         </p>
       </div>
-
-      <footer>
-        <span></span>
-        <span className="push-left"></span>
-      </footer>
     </div>
   );
 }

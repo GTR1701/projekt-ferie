@@ -82,8 +82,8 @@
 }
 
 .zdjecie_transparent > img {
-  height: auto;
-  width: auto;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   padding: 0;
 }
