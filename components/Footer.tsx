@@ -5,7 +5,8 @@ export default function Footer() {
     <div className={styles.footer}>
       <p className={styles.tekst}>Autor: Dawid Kowal</p> <br />
       <h5>
-        Ta strona to demo. Żadne funkcje związane z rejestracją nie działają.
+        Ta strona to demo. Funkcje związane z rezerwacją są przykładem działania
+        strony.
       </h5>
     </div>
   );

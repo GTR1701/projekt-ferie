@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,10 +13,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
+      <Image
         className="banner"
         alt=""
         src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        width={1920}
+        height={860}
+        priority={true}
       />
       <Navbar sticky={false} />
       <div className="space"></div>

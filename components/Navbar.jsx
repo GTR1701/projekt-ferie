@@ -2,9 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { auth } from "../lib/firebase";
 import { signOut } from "firebase/auth";
 import { UserContext } from "../lib/context";
+import Image from "next/image";
 
 export default function Navbar({ sticky }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -79,7 +80,12 @@ export default function Navbar({ sticky }) {
                     className={styles.zdjecie_transparent}
                     href={`/${username}`}
                   >
-                    <img src={user?.photoURL} />
+                    <Image
+                      src={user?.photoURL}
+                      width={50}
+                      height={50}
+                      alt="user picture"
+                    />
                   </Link>
                 </>
               ) : (
@@ -134,7 +140,12 @@ export default function Navbar({ sticky }) {
                     className={styles.zdjecie_transparent}
                     href={`/${username}`}
                   >
-                    <img src={user?.photoURL} />
+                    <Image
+                      src={user?.photoURL}
+                      width={50}
+                      height={50}
+                      alt="user picture"
+                    />
                   </Link>
                 </>
               ) : (

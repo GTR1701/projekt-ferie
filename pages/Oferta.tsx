@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,13 +13,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
+      <Image
         className="banner"
         alt=""
         src="https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        width={1920}
+        height={860}
+        priority={true}
+        quality={100}
       />
       <Navbar sticky={false} />
-      <div className="space"></div>
+      <div className="space-o"></div>
       <Section
         direction={"left"}
         image={
@@ -30,7 +35,7 @@ export default function Home() {
         content={"Minimum 2 noce"}
       />
       <Section
-        direction={"right"}
+        direction={"left"}
         image={
           "https://images.pexels.com/photos/6392948/pexels-photo-6392948.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
@@ -50,7 +55,7 @@ export default function Home() {
         content={"Minimum 2 noce"}
       />
       <Section
-        direction={"right"}
+        direction={"left"}
         image={
           "https://images.unsplash.com/photo-1503431153573-96e959f4d9b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
         }

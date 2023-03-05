@@ -47,6 +47,8 @@
   min-width: 25vw;
   max-height: 50vw;
   min-height: 25vw;
+  width: auto;
+  height: auto;
 }
 
 .text {

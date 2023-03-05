@@ -25,11 +25,14 @@ a {
   position: absolute;
   width: 100%;
   height: auto;
-  max-height: 1000px;
 }
 
 .space {
   height: 1200px;
+  width: 100%;
+}
+.space-o {
+  height: 1500px;
   width: 100%;
 }
 

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function PostFeed({ posts, admin }) {
   return posts
     ? posts.map((post) => (

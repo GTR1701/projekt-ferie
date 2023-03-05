@@ -1,5 +1,4 @@
 import styles from "../styles/Card.module.css";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -27,11 +26,17 @@ export default function Section({
         whileInView={{
           opacity: 1,
           translateX: "0px",
-          transition: { duration: 1, delay: 0.3 },
+          transition: { duration: 0.5, delay: 0.2 },
         }}
         className={styles.section_left}
       >
-        <img className={styles.image} src={image} alt="" />
+        <Image
+          className={styles.image}
+          src={image}
+          alt=""
+          width={720}
+          height={480}
+        />
         <div>
           <h1 className={styles.title}>{name}</h1>
           <h3 className={styles.cena}>{price}</h3>
@@ -51,7 +56,13 @@ export default function Section({
         }}
         className={styles.section_left}
       >
-        <img className={styles.image} src={image} alt="" />
+        <Image
+          className={styles.image}
+          src={image}
+          alt=""
+          width={720}
+          height={480}
+        />
         <div>
           <h1 className={styles.title}>{name}</h1>
           <p className={styles.size_left}>{size}</p>
@@ -75,7 +86,13 @@ export default function Section({
           <p className={styles.size_left}>{size}</p>
           <p className={styles.content}>{content}</p>
         </div>
-        <img className={styles.image} src={image} alt="" />
+        <Image
+          className={styles.image}
+          src={image}
+          alt=""
+          width={720}
+          height={480}
+        />
       </motion.div>
     );
   }

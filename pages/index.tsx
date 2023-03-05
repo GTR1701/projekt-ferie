@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
@@ -12,7 +13,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img className="banner" alt="" src="/home.jpg" />
+      <Image
+        className="banner"
+        alt=""
+        src="/home.jpg"
+        width={1920}
+        height={860}
+        priority={true}
+      />
       <Navbar sticky={false} />
       <div className="space"></div>
       <Card

@@ -1,8 +1,6 @@
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
 import {
   doc,
   writeBatch,
-  getDoc,
   getFirestore,
   getCountFromServer,
   collection,
@@ -15,10 +13,10 @@ import Calendar from "react-calendar";
 import { useState, useEffect, useContext } from "react";
 import "react-calendar/dist/Calendar.css";
 import "react-hot-toast";
-import Link from "next/link";
 import toast from "react-hot-toast";
 import { UserContext } from "../lib/context";
 import AuthCheck from "../components/AuthCheck";
+import Image from "next/image";
 
 export default function Book() {
   const [przyjazd, setPrzyjazd] = useState(new Date());
@@ -111,13 +109,16 @@ export default function Book() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
+      <Image
         className="banner"
         alt=""
         src="https://images.unsplash.com/photo-1621293954908-907159247fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        width={1920}
+        height={860}
+        priority={true}
       />
       <Navbar sticky={false} />
-      <div className="space"></div>
+      <div className="space-o"></div>
       <form onSubmit={handleSubmit}>
         <div className={styles.rezerwacja}>
           <label htmlFor="od">Data przyjazdu:</label>

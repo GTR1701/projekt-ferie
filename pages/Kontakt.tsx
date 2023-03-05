@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "../styles/Kontakt.module.css";
+import Image from "next/image";
 
 export default function Book() {
   return (
@@ -12,7 +13,14 @@ export default function Book() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img className="banner" alt="" src="/home.jpg" />
+      <Image
+        className="banner"
+        alt=""
+        src="/home.jpg"
+        width={1920}
+        height={860}
+        priority={true}
+      />
       <Navbar sticky={false} />
       <div className={styles.space}></div>
       <h1 className={styles.header}>Dane Kontaktowe</h1>

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,15 +13,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
+      <Image
         className="banner"
         alt=""
-        width="100%"
-        height="100%"
+        width={1920}
+        height={860}
+        priority={true}
         src="https://images.unsplash.com/photo-1583416750470-965b2707b355?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       />
       <Navbar sticky={false} />
-      <div className="space"></div>
+      <div className="space-o"></div>
       <Section
         direction={"lefth1"}
         image={
