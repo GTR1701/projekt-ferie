@@ -35,7 +35,7 @@ export default function Home() {
         direction="right"
         image="https://media.istockphoto.com/id/635973512/pl/zdj%C4%99cie/domy-i-%C5%9Bnie%C5%BCne-g%C3%B3ry-panorama-w-bu%C5%82garskim-o%C5%9Brodku-narciarskim-bansko.jpg?s=612x612&w=0&k=20&c=uIaZsElZ77B1qirrtdiXP9vDqGRKFUMhltYBdDzC3ns="
         content="Nasz hotel oferuje wiele różnych pakietów dostosowanych do długości pobytu, zawartych w nich usług oraz wiele więcej!"
-        page="/Pakiety"
+        page="/Oferta"
       />
       <Card
         direction="left"
