@@ -20,6 +20,7 @@ export default function Home() {
         width={1920}
         height={860}
         priority={false}
+        quality={25}
       />
       <Navbar sticky={false} />
       <div className="space"></div>
