@@ -14,14 +14,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href="/home.jpg" as="image" />
       </Head>
-      <img
+      <Image
         className="banner"
         alt=""
         src="/home.jpg"
-        // width={1920}
-        // height={860}
+        width={1920}
+        height={860}
         // priority={false}
-        // quality={25}
       />
       <Navbar sticky={false} />
       <div className="space"></div>
