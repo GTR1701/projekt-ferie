@@ -20,7 +20,7 @@ export default function Home() {
         src="/home.jpg"
         width={1920}
         height={860}
-        // priority={false}
+        priority={true}
       />
       <Navbar sticky={false} />
       <div className="space"></div>
